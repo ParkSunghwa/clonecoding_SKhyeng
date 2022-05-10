@@ -4,6 +4,7 @@ $(document).ready(function(){
     // .wrap_topbar
     let lastScrollTop = 0,
     delta = 15;
+    // let lastTime = new Date().getTime;
 
     $(window).scroll(function(){
 
@@ -20,6 +21,29 @@ $(document).ready(function(){
                 "top" : "0px",
             });
         }
+
+
+        // let recentTime = new Date().getTime,
+        // changeScroll = Math.abs(lastScrollTop - recentScrollTop),
+        // changeTime = Math.abs(recentTime - lastTime);
+        // let recentSpeed = changeScroll / changeTime;
+        // console.log(recentTime);
+        // console.log(recentSpeed);
+        // if(recentSpeed > 0){
+        //     $(".wrap_sideindex").css({
+        //         "right" : "-111px",
+        //         "opacity" : "0",
+        //     });
+        // } else{
+        //     $(".wrap_sideindex").css({
+        //         "right" : "0",
+        //         "opacity" : "1",
+        //     });
+        // }
+
+        // lastTime = recentTime;
+
+
 
         lastScrollTop = recentScrollTop;
 
@@ -75,18 +99,39 @@ $(document).ready(function(){
 
     });
 
-    $.fn.scrollStopped = function(callback) {
-        var that = this, $this = $(that);
-        $this.scroll(function(ev) {
-          clearTimeout($this.data('scrollTimeout'));
-          $this.data('scrollTimeout', setTimeout(callback.bind(that), 250, ev));
-        });
-      };
+    // $.fn.scrollStopped = function(callback) {
+    //     var that = this, $this = $(that);
+    //     $this.scroll(function(ev) {
+    //       clearTimeout($this.data('scrollTimeout'));
+    //       $this.data('scrollTimeout', setTimeout(callback.bind(that), 250, ev));
+    //     });
+    //   };
        
-    $(window).scrollStopped(function(ev){
+    // $(window).scrollStopped(function(ev){
         
             
-    });
-    
+    // });
 
+    // var lastOffset = $(window).scrollTop();
+    // var lastDate = new Date().getTime();
+    // $(window).scroll(function(e) {
+    //     var delayInMs = e.timeStamp - lastDate;
+    //     var offset = e.target.scrollTop - lastOffset;
+    //     var speedInpxPerMs = offset / delayInMs;
+    //     console.log(speedInpxPerMs);
+    //     lastDate = e.timeStamp;
+    //     lastOffset = e.target.scrollTop;
+    // });
+
+    // if(speedInpxPerMs >= 0){
+    //     $(".wrap_sideindex").css({
+    //         "right" : "-111px",
+    //         "opacity" : "0",
+    //     });
+    // } else{
+    //     $(".wrap_sideindex").css({
+    //         "right" : "0",
+    //         "opacity" : "1",
+    //     });
+    // };
 });
