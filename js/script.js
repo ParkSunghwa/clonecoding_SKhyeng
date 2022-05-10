@@ -57,4 +57,36 @@ $(document).ready(function(){
     });
 
     
+    // .wrap_sideindex
+
+    $(window).scroll(function(){
+
+        if($(this).scrollTop() == 0){
+            $(".wrap_sideindex").css({
+                "right" : "-111px",
+                "opacity" : "0",
+            });
+        } else{
+            $(".wrap_sideindex").css({
+                "right" : "0",
+                "opacity" : "1",
+            });
+        };
+
+    });
+
+    $.fn.scrollStopped = function(callback) {
+        var that = this, $this = $(that);
+        $this.scroll(function(ev) {
+          clearTimeout($this.data('scrollTimeout'));
+          $this.data('scrollTimeout', setTimeout(callback.bind(that), 250, ev));
+        });
+      };
+       
+    $(window).scrollStopped(function(ev){
+        
+            
+    });
+    
+
 });
